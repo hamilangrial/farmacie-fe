@@ -1,0 +1,42 @@
+.oil {
+    @apply bg-gradient-to-r from-[#8B0000] to-[#FF7F50];
+  }
+  .primary {
+    @apply bg-gradient-to-r from-[#4B0082] to-[#DDA0DD];
+  }
+  .secondary {
+    @apply bg-gradient-to-r from-[#008172] to-[#FFFF00];
+  }
+  .cardWrapper{
+    @apply rounded-[12px] flex justify-between items-center
+  }
+  .batchWraper{
+    @apply text-[24px] font-[600px] p-[10px] rounded-[50px] w-fit
+  }
+  .primarycardWrapper{
+    @apply bg-gradient-to-r from-[#4B0082] to-[#DDA0DD]
+  }
+  .secondarycardWrapper{
+    @apply bg-gradient-to-r from-[#008172] to-[#FFFF00]
+  }
+  .primarybatchWrapper{
+    @apply bg-[#FFF461] text-[#732C9B]
+  }
+  .secondarybatchWrapper{
+    @apply bg-[#EDFFC3] text-[#08846D]
+  }
+  .primarybutton{
+    @apply bg-[#FFF461] max-w-[290px] hover:bg-[#ffff] border border-[#ffff] text-[#4B0082] hover:text-[##8D48AB] 
+  }
+  .secondarybutton{
+    @apply bg-[#EDFFC3] max-w-[290px] hover:bg-[#ffff]  border border-[#ffff] text-[#72B93E] hover:text-[#72B93E] 
+  }
+  .primaryprice{
+    @apply text-[#FFF461]
+  }
+  .secondaryprice{
+    @apply text-[#EDFFC3]
+  }
+  .selectedImg{
+    @apply border-2 border-[#01C9A7] 
+  }

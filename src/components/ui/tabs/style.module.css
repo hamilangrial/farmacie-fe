@@ -1,0 +1,6 @@
+.order{
+    @apply w-[100%]
+}
+.default{
+    @apply w-[997px]
+}
