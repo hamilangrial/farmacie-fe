@@ -1,8 +1,10 @@
+'use client';
 import React from "react";
 import LoginBanner from "../../../../ui/banner";
 import { Button, Checkbox, Input } from "@/components/ui";
 import Image from "next/image";
 import { ICONS } from "@/_lib/constant/assets/icons";
+import Link from "next/link";
 
 export default function SignUpForm() {
   const handleSignup = (e) => {
