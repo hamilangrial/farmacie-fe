@@ -196,7 +196,6 @@ export const TopSelling = [
   },
 ];
 
-
 export const pharmacies = [
   {
     id: 1,
@@ -422,7 +421,6 @@ export const DetailTabLable = [
   { label: "Payment Methods", value: "payment" },
 ];
 
-
 export const tabs = [
   {
     value: "description",
@@ -475,8 +473,47 @@ export const OrderTabs = [
     label: "Reviews",
     content: <div>Customer reviews go here.</div>,
   },
-]
+];
 export const OrdertabsLable = [
   { label: "Running", value: "running" },
   { label: "History", value: "history" },
+];
+
+export const ExclucsiveDeals = [
+  {
+    id: 1,
+    title: "Cerave Moisturizing Anti-Shine Gel Face Cream For Oily Skin 52 ml",
+    discountPercent: 30,
+    price: "14.04",
+    originalPrice: "20.82",
+    variant: "secondary",
+    image: {
+      src: IMAGES.saleproduct.path,
+      alt: IMAGES.saleproduct.alt,
+    },
+  },
+  {
+    id: 2,
+    title: "Rinazine Nasal Spray 15Ml 0.1%",
+    discountPercent: 30,
+    price: "14.04",
+    originalPrice: "20.82",
+    variant: "primary",
+    image: {
+      src: IMAGES.saleproduct.path,
+      alt: IMAGES.saleproduct.alt,
+    },
+  },
+  {
+    id: 3,
+    title: "Dental Care Toothpaste for Vivid and Bright Smiles.",
+    discountPercent: 25,
+    price: "10.00",
+    originalPrice: "13.33",
+    variant: "destructive",
+    image: {
+      src: IMAGES.saleproduct.path,
+      alt: IMAGES.saleproduct.alt,
+    },
+  },
 ];

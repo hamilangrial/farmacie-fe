@@ -55,4 +55,12 @@ export const IMAGES = {
     path: "/assets/images/profile.svg",
     alt: "Profile Image",
   },
+  banner: {
+    path: "/assets/images/banner.svg",
+    alt: "Banner Image",
+  },
+  bannerSideImage: {
+    path: "/assets/images/bannerSideImage.svg",
+    alt: "Banner Image",
+  },
 };
