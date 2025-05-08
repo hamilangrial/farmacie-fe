@@ -4,7 +4,7 @@ import React from "react";
 
 const OrderDetail = ({ paths, imageUrl, description, items, price }) => {
   return (
-    <div className="w-[1759px] bg-white shadow-[0px_4px_4px_0px_#00000040] p-[33px] justify-end flex flex-col gap-[65px]">
+    <div className="w-full bg-white shadow-[0px_4px_4px_0px_#00000040] p-[33px] justify-end rounded-2xl flex flex-col gap-[65px]">
       <div className="flex flex-col gap-[32px]">
         <h3 className="text-[32px] font-medium">Order ID: #{paths}</h3>
         <div className="flex flex-col gap-[42px]">
@@ -24,17 +24,19 @@ const OrderDetail = ({ paths, imageUrl, description, items, price }) => {
               <p className="text-[#1D2939]">Wed, 25 Nov 2024</p>
             </div>
           </div>
-          <div className="w-full flex items-center justify-between p-[24px] bg-white rounded-lg shadow mb-4">
+          <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between p-[24px] bg-white rounded-lg shadow mb-4">
             <div className="w-[60px] h-[60px] rounded overflow-hidden">
               <Image src={imageUrl} alt="Product" width={108} height={108} />
             </div>
-            <div className="flex flex-col ml-4 flex-1">
+            <div className="flex flex-col md:ml-4 flex-1">
               <p className="font-medium text-2xl text-[#1E1E1E]">
                 {description}
               </p>
               <p className="font-medium text-base text-[#676767]">x{items}</p>
             </div>
-            <span className="text-2xl font-medium text-[#01C9A7]">{price}€</span>
+            <span className="text-2xl font-medium text-[#01C9A7]">
+              {price}€
+            </span>
           </div>
         </div>
       </div>
