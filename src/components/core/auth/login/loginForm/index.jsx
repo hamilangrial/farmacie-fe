@@ -19,7 +19,9 @@ export default function LoginForm() {
       <div className="grid grid-cols gap-[40px]">
         <LoginBanner />
         <div className="grid place-items-center gap-[24px]">
-          <h2 className="text-[32px] font-semibold">Sign In</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
+            Sign In
+          </h2>
           <p className="text-gray-600">
             Don’t have an account yet?{" "}
             <Link href="/signup" className="text-teal-500 hover:underline">
@@ -31,7 +33,7 @@ export default function LoginForm() {
           <form>
             <div className="grid gap-10">
               <Input
-                label="Email address "
+                label="Email address"
                 id="email"
                 placeholder="Enter your email address here"
                 type="email"
@@ -50,6 +52,7 @@ export default function LoginForm() {
                   label="Password"
                   id="password"
                   placeholder="Enter your Password here"
+                  required
                   type="password"
                   icon={
                     <Image
@@ -65,7 +68,7 @@ export default function LoginForm() {
                   <Checkbox id="remember" label="Remember me" />
                   <Link
                     href="#"
-                    className="text-red-500 hover:underline font-normal"
+                    className="text-red-500 text-right hover:underline font-normal"
                   >
                     Forgot your password?
                   </Link>
@@ -75,7 +78,7 @@ export default function LoginForm() {
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="min-w-[416px] max-w-full  text-lg"
+                  className="md:min-w-[416px] max-w-full text-lg"
                   onClick={handleLogin}
                 >
                   LogIn
@@ -83,13 +86,13 @@ export default function LoginForm() {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className=" w-[310px]">
+                <div className="lg:w-[310px] w-full">
                   <div className="h-[1px] bg-[#BCBCBC] rounded-md"></div>
                 </div>
                 <div className="text-gray-500 min-w-[95px] flex justify-center">
                   Or
                 </div>
-                <div className="w-[310px]">
+                <div className="lg:w-[310px] w-full">
                   <div className="h-[1px] bg-[#BCBCBC] "></div>
                 </div>
               </div>
@@ -97,7 +100,7 @@ export default function LoginForm() {
                 <Button
                   variant="default"
                   size="sm"
-                  className="min-w-[340px] max-w-full"
+                  className="lg:min-w-[340px] text-sm md:text-base whitespace-normal"
                   onClick={handleLogin}
                 >
                   Continue as a Guest Account
