@@ -11,14 +11,14 @@ const ProductImageGallery = ({ images = [] }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div className="flex items-center pl-[44px] pt-[55px] gap-[58px]">
+    <div className="flex flex-col lg:flex-row items-center gap-6">
       {/* Thumbnails */}
-      <div className="flex flex-col items-center gap-4 overflow-y-auto">
+      <div className="flex flex-row lg:flex-col items-center gap-4 overflow-x-auto lg:overflow-y-auto">
         {images.map((img, index) => (
           <button
             key={index}
             onClick={() => setSelectedImage(img)}
-            className={` h-[145px] w-[145px] rounded-lg overflow-hidden ${
+            className={`h-16 w-16 md:h-24 md:w-24 md:h-[145px] md:w-[145px] rounded-lg overflow-hidden ${
               selectedImage?.image === img.image
                 ? style.selectedImg
                 : "border-transparent"
@@ -36,7 +36,7 @@ const ProductImageGallery = ({ images = [] }) => {
       </div>
 
       {/* Main Image */}
-      <div className="w-[656px] h-[656px] items-center justify-center flex">
+      <div className="w-full md:w-[656px] h-auto flex items-center justify-center">
         <Image
           src={selectedImage.image}
           alt="Main product"
@@ -45,33 +45,40 @@ const ProductImageGallery = ({ images = [] }) => {
           className="rounded-xl object-contain"
         />
       </div>
-      <div className="w-[704px] flex flex-col max-w-auto h-[463px] gap-[24px] max-h-auto">
-        <div className="text-[] w-[540px] max-w-auto">
-          <p className="text-[30px] font-bold">
+
+      <div className="w-full flex flex-col max-w-full h-auto gap-6 md:gap-8 lg:ml-8">
+        <div className="text-left">
+          <p className="text-2xl md:text-3xl font-bold">
             Somatoline Skin Expert Starter Kit Bende Drenanti Acione Riducent
             Urto
           </p>
         </div>
 
-        <div className="flex gap-[40px]">
-          <div className="flex flex-col gap-[24px]">
-            <div className="flex gap-[50px]">
-              <div className="flex gap-[24px]">
-                <span className="text-2xl font-medium ">Brand:</span>
-                <span className="text-2xl font-normal ">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-10">
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-12">
+              <div className="flex gap-4 items-center">
+                <span className="text-lg md:text-2xl font-medium">Brand:</span>
+                <span className="text-lg md:text-xl font-normal">
                   Somatoline SkinExpert
                 </span>
               </div>
-              <div className="flex gap-[24px]">
-                <span className="text-2xl font-medium ">Item code:</span>
-                <span className="text-2xl font-normal ">038135087</span>
+              <div className="flex gap-4 items-center">
+                <span className="text-lg md:text-2xl font-medium">
+                  Item code:
+                </span>
+                <span className="text-lg md:text-xl font-normal">
+                  038135087
+                </span>
               </div>
             </div>
-            <div className="flex flex-row gap-[50px]">
-              <div className="flex flex-row items-center gap-[24px]">
-                <span className="text-2xl font-medium ">Ratings:</span>
-                <div className="flex gap-[10px] items-center justify-center">
-                  <span className="text-2xl font-normal ">4.8</span>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-12">
+              <div className="flex items-center gap-4">
+                <span className="text-lg md:text-2xl font-medium">
+                  Ratings:
+                </span>
+                <div className="flex gap-2 items-center justify-center">
+                  <span className="text-lg md:text-xl font-normal">4.8</span>
                   <Image
                     src={IMAGES.star.path}
                     alt={IMAGES.star.alt}
@@ -81,31 +88,34 @@ const ProductImageGallery = ({ images = [] }) => {
                   />
                 </div>
               </div>
-              <div className="flex gap-[24px]">
-                <span className="text-2xl font-medium ">Category:</span>
-                <span className="text-2xl font-normal ">Bandages</span>
+              <div className="flex gap-4 items-center">
+                <span className="text-lg md:text-2xl font-medium">
+                  Category:
+                </span>
+                <span className="text-lg md:text-xl font-normal">Bandages</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-[393px] h-auto py-[18px] px-[12px] bg-[#01C9A7] rounded-xl">
-          <div className="flex gap-[23px] flex-col">
-            <div className="flex flex-row-2 gap-[9px]">
-              <div className="bg-white flex justify-center rounded-[12px] items-center w-[180px] px-[9px] py-[10px]">
-                <div className="flex gap-[10px] rounded-[5px]">
+
+        <div className="w-full md:w-[393px] h-auto py-4 px-3 bg-[#01C9A7] rounded-xl">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-3">
+              <div className="bg-white flex justify-center rounded-lg items-center w-full md:w-[180px] px-3 py-2">
+                <div className="flex gap-2 rounded-md">
                   <span className="text-[#00997F]">Save:</span>
                   <span className="text-[#00997F]">-38%</span>
                 </div>
               </div>
-              <div className="bg-white px-[9px] rounded-[12px] flex justify-center items-center w-[180px] py-[10px]">
+              <div className="bg-white px-3 rounded-lg flex justify-center items-center w-full md:w-[180px] py-2">
                 <span className="text-[#00997F]">In Stock</span>
               </div>
-
-              <div className="bg-white"></div>
             </div>
-            <span className="text-white text-[40px] font-bold">10,22€</span>
-            <div className="flex gap-[14px]">
-              <div className="flex gap-[12] justify-between w-[95px] items-center p-[10px] bg-white rounded-full">
+            <span className="text-white text-3xl md:text-4xl font-bold">
+              10,22€
+            </span>
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex gap-3 justify-between w-full md:w-[95px] items-center p-2 bg-white rounded-full">
                 <span>
                   <Image
                     src={ICONS.add.path}
@@ -114,7 +124,7 @@ const ProductImageGallery = ({ images = [] }) => {
                     height={20}
                   />
                 </span>
-                <span className="text-[#00997F] font-2xl">1</span>
+                <span className="text-[#00997F] text-lg md:text-2xl">1</span>
                 <span>
                   <Image
                     src={ICONS.minus.path}
@@ -127,7 +137,7 @@ const ProductImageGallery = ({ images = [] }) => {
               <Button
                 variant="destructive"
                 size="sm"
-                className="w-[186px] bg-white text-[#01C9A7]"
+                className="w-full md:w-[186px] bg-white text-[#01C9A7]"
                 leadingIcon={
                   <Image
                     src={ICONS.shopingCart.path}
@@ -140,31 +150,21 @@ const ProductImageGallery = ({ images = [] }) => {
               >
                 Add To Cart
               </Button>
-              <div className="w-[57px] h-[40] flex justify-center items-center">
-              <Button
-                variant="destructive"
-                className="bg-white"
-                leadingIcon={
-                  <Image
-                  src={ICONS.favorite.path}
-                  alt={ICONS.favorite.alt}
-                  width={17}
-                  height={14}
-                  className="w-[57] h-full rounded-t-xl"
+              <div className="w-full md:w-[57px] h-auto flex justify-center items-center">
+                <Button
+                  variant="destructive"
+                  className="bg-white"
+                  leadingIcon={
+                    <Image
+                      src={ICONS.favorite.path}
+                      alt={ICONS.favorite.alt}
+                      width={17}
+                      height={14}
+                      className="w-full h-auto rounded-t-xl"
+                    />
+                  }
                 />
-                }
-              >
-              </Button>
               </div>
-              {/* <div className="flex gap-[12] justify-between w-[57px] items-center px-[20px] py-[10px] bg-white rounded-[50px]">
-                <Image
-                  src={ICONS.favorite.path}
-                  alt={ICONS.favorite.alt}
-                  width={17}
-                  height={14}
-                  className="w-full h-auto rounded-t-xl"
-                />
-              </div> */}
             </div>
           </div>
         </div>
