@@ -16,6 +16,8 @@ import SectionHeader from "../home/sectionheader";
 import { TopSelling } from "@/_lib/dumyData";
 import { ProductCard } from "@/components/ui/productcard";
 import { useRouter } from "next/navigation";
+import PaymentIcons from "@/components/ui/paymenticons";
+import { paymentIconsData } from "@/_lib/dumyData";
 
 const Cart = () => {
   return (
@@ -218,48 +220,7 @@ const OrderSummary = () => {
             <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
               Accepted Secure Payment Methods
             </p>
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="Visa"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="American Express"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="Mastercard"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="PayPal"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="Discover"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            <PaymentIcons icons={paymentIconsData} />
           </div>
         </div>
       </div>

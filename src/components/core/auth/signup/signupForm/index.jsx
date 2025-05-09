@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import LoginBanner from "../../../../ui/banner";
 import { Button, Checkbox, Input } from "@/components/ui";
@@ -16,7 +16,9 @@ export default function SignUpForm() {
       <div className="grid grid-cols gap-[40px]">
         <LoginBanner />
         <div className="grid place-items-center gap-[24px]">
-          <h2 className="text-[32px] font-semibold">Create Your Account</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
+            Create Your Account
+          </h2>
           <p className="text-gray-600">
             Already have an account?{" "}
             <Link href="/login" className="text-teal-500 hover:underline">
@@ -27,9 +29,9 @@ export default function SignUpForm() {
         <div>
           <form>
             <div className="grid gap-10">
-              <div className="grid gap-10 grid-cols-2">
+              <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
                 <Input
-                  label="First Name "
+                  label="First Name"
                   id="firstname"
                   placeholder="Enter your First name here"
                   type="text"
@@ -43,7 +45,7 @@ export default function SignUpForm() {
                   }
                 />
                 <Input
-                  label="Last Name "
+                  label="Last Name"
                   id="lastname"
                   placeholder="Enter your Last name here"
                   type="text"
@@ -58,9 +60,9 @@ export default function SignUpForm() {
                 />
               </div>
 
-              <div className="grid gap-10 grid-cols-2">
+              <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
                 <Input
-                  label="Email address "
+                  label="Email address"
                   id="email"
                   placeholder="Enter your email address here"
                   type="email"
@@ -75,7 +77,7 @@ export default function SignUpForm() {
                   }
                 />
                 <Input
-                  label="Contact Name "
+                  label="Contact Name"
                   id="coontact"
                   placeholder="Enter your contact number here"
                   type="tel"
@@ -89,9 +91,9 @@ export default function SignUpForm() {
                   }
                 />
               </div>
-              <div className="grid gap-10 grid-cols-2">
+              <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
                 <Input
-                  label="Password "
+                  label="Password"
                   id="email"
                   placeholder="Enter your password here"
                   type="password"
@@ -105,7 +107,7 @@ export default function SignUpForm() {
                   }
                 />
                 <Input
-                  label="Confirm Password "
+                  label="Confirm Password"
                   id="confirmpassword"
                   placeholder="Re-write your password here"
                   type="password"
@@ -127,7 +129,7 @@ export default function SignUpForm() {
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="min-w-[416px] max-w-full  text-lg"
+                  className="md:min-w-[416px] max-w-full text-lg"
                   onClick={handleSignup}
                 >
                   Sign Up

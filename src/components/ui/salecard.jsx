@@ -1,14 +1,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-// Shared color map
 const variantColors = {
   destructive: "bg-[#BCC901] border-[#BCC901]",
   primary: "bg-[#092C4C] border-[#092C4C]",
   secondary: "bg-[#735FBB] border-[#735FBB]",
 };
 
-// Get card background and button border color based on variant
 const buttonVariants = (variant) => {
   return variantColors[variant] || "";
 };
@@ -23,63 +21,80 @@ export function SaleCard({
 }) {
   const cardBg = buttonVariants(variant);
 
-  // Set text color based on variant
   const priceTextColor =
     variant === "primary"
-      ? "text-[#01C9A7]" // primary text color
+      ? "text-[#01C9A7]"
       : variant === "secondary"
-      ? "text-[#FFEA00]" // secondary text color
-      : "text-[#092C4C]"; // destructive text color
+      ? "text-[#FFEA00]"
+      : "text-[#092C4C]";
 
-  // Set background color for Sale Discount div based on variant
-  const discountBgColor = variant === "primary" 
-    ? "bg-[#01C9A7]" // primary background color
-    : variant === "secondary"
-    ? "bg-[#FFEA00]" // secondary background color
-    : "bg-[#092C4C]"; // destructive background color
+  const discountBgColor =
+    variant === "primary"
+      ? "bg-[#01C9A7]"
+      : variant === "secondary"
+      ? "bg-[#FFEA00]"
+      : "bg-[#092C4C]";
 
-  // Set Sale Discount text color to match the card background
-  const discountTextColor = variant === "primary" 
-    ? "text-[#092C4C]" // primary text color for sale
-    : variant === "secondary"
-    ? "text-[#092C4C]" // secondary text color for sale
-    : "text-[#BCC901]"; // destructive text color for sale
+  const discountTextColor =
+    variant === "primary"
+      ? "text-[#092C4C]"
+      : variant === "secondary"
+      ? "text-[#092C4C]"
+      : "text-[#BCC901]";
 
-  // Set default and hover colors for the button based on variant
-  const buttonDefaultBgColor = variant === "primary" 
-    ? "bg-[#092C4C] border-[#092C4C]" // primary button default style
-    : variant === "secondary"
-    ? "bg-[#735FBB] border-[#735FBB]" // secondary button default style
-    : "bg-[#BCC901] border-[#BCC901]"; // destructive button default style
+  const buttonDefaultBgColor =
+    variant === "primary"
+      ? "bg-[#092C4C] border-[#092C4C]"
+      : variant === "secondary"
+      ? "bg-[#735FBB] border-[#735FBB]"
+      : "bg-[#BCC901] border-[#BCC901]";
 
-  const buttonHoverBgColor = variant === "primary" 
-    ? "bg-white text-[#092C4C] border-[#092C4C]" // primary button hover style
-    : variant === "secondary"
-    ? "bg-white text-[#735FBB] border-[#735FBB]" // secondary button hover style
-    : "bg-white text-[#BCC901] border-[#BCC901]"; // destructive button hover style
+  const buttonHoverBgColor =
+    variant === "primary"
+      ? "bg-white text-[#092C4C] border-[#092C4C]"
+      : variant === "secondary"
+      ? "bg-white text-[#735FBB] border-[#735FBB]"
+      : "bg-white text-[#BCC901] border-[#BCC901]";
 
   return (
-    <div className="w-[560px] flex gap-[41px] flex-col h-[411px]">
-      <div className={`${cardBg} flex rounded-[12px] p-[29px] h-[290px]`}>
-        <div className="flex flex-col gap-[11px]">
-          {/* Sale Discount div with dynamic background and text color */}
-          <div className={`${discountBgColor} ${discountTextColor} text-2xl font-semibold px-2 py-1 rounded-md w-fit h-[44px]`}>
+    <div className="relative w-full flex flex-col justify-between h-full min-h-[360px] xl:min-h-[311px] 2xl:min-h-[420px] rounded-t-[12px] overflow-visible group">
+      {/* Card Body */}
+      <div
+        className={`${cardBg} flex flex-col-reverse lg:flex-row justify-between items-center gap-4 p-4 md:p-6 xl:p-8 rounded-t-[12px] h-full`}
+      >
+        {/* Text Content */}
+        <div className="flex flex-col gap-2 w-full lg:w-1/2 items-start self-start">
+          <div
+            className={`${discountBgColor} ${discountTextColor} text-sm sm:text-base font-semibold px-2 py-1 rounded-md w-fit`}
+          >
             Sale {discountPercent}%
           </div>
-          <span className="w-[283px]">
-            <p className="text-2xl text-white font-semibold">{title}</p>
-          </span>
-          <p className={`text-2xl ${priceTextColor} font-semibold`}>€{price}</p>
-          <p className="text-base text-white font-normal line-through">€{originalPrice}</p>
+
+          <p className="text-lg xl:text-2xl font-semibold text-white leading-snug">
+            {title}
+          </p>
+          <p className={`text-base xl:text-xl ${priceTextColor} font-semibold`}>
+            €{price}
+          </p>
+          <p className="text-sm text-white line-through">€{originalPrice}</p>
         </div>
-        <div>{image}</div>
+
+        {/* Image */}
+        <div className="w-full lg:w-1/2 flex justify-center items-end relative z-10">
+          <div className="relative w-full h-full flex justify-center items-end lg:absolute lg:top-30 xl:top-60 lg:left-0 2xl:top-70">
+            <div className="w-[160px] sm:w-[180px] md:w-[200px] lg:w-[260px] xl:w-[280px] 2xl:w-[300px] h-auto -mt-4">
+              {image}
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="pl-[29px]">
+      {/* Button */}
+      <div className="pt-3 px-4 lg:px-8">
         <Button
           variant="outline"
           size="sm"
-          className={`${buttonDefaultBgColor} hover:${buttonHoverBgColor} text-white`} // Button default and hover styles
+          className={`${buttonDefaultBgColor} hover:${buttonHoverBgColor} text-white w-full sm:w-auto`}
         >
           Shop Now
         </Button>

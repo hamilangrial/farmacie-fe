@@ -1,3 +1,4 @@
+import { ICONS } from "../constant/assets/icons";
 import { IMAGES } from "../constant/assets/images";
 
 export const Essential_Over = [
@@ -195,7 +196,6 @@ export const TopSelling = [
     alt: IMAGES.featureproduct.alt,
   },
 ];
-
 
 export const pharmacies = [
   {
@@ -422,7 +422,6 @@ export const DetailTabLable = [
   { label: "Payment Methods", value: "payment" },
 ];
 
-
 export const tabs = [
   {
     value: "description",
@@ -475,8 +474,96 @@ export const OrderTabs = [
     label: "Reviews",
     content: <div>Customer reviews go here.</div>,
   },
-]
+];
 export const OrdertabsLable = [
   { label: "Running", value: "running" },
   { label: "History", value: "history" },
 ];
+
+export const ExclucsiveDeals = [
+  {
+    id: 1,
+    title: "Cerave Moisturizing Anti-Shine Gel Face Cream For Oily Skin 52 ml",
+    discountPercent: 30,
+    price: "14.04",
+    originalPrice: "20.82",
+    variant: "secondary",
+    image: {
+      src: IMAGES.saleproduct.path,
+      alt: IMAGES.saleproduct.alt,
+    },
+  },
+  {
+    id: 2,
+    title: "Rinazine Nasal Spray 15Ml 0.1%",
+    discountPercent: 30,
+    price: "14.04",
+    originalPrice: "20.82",
+    variant: "primary",
+    image: {
+      src: IMAGES.saleproduct.path,
+      alt: IMAGES.saleproduct.alt,
+    },
+  },
+  {
+    id: 3,
+    title: "Dental Care Toothpaste for Vivid and Bright Smiles.",
+    discountPercent: 25,
+    price: "10.00",
+    originalPrice: "13.33",
+    variant: "destructive",
+    image: {
+      src: IMAGES.saleproduct.path,
+      alt: IMAGES.saleproduct.alt,
+    },
+  },
+];
+
+export const paymentIconsData = [
+  { path: ICONS.payments.visa.path, alt: "Visa" },
+  { path: ICONS.payments.amex.path, alt: "American Express" },
+  { path: ICONS.payments.mastercard.path, alt: "Mastercard" },
+  { path: ICONS.payments.paypal.path, alt: "PayPal" },
+  { path: ICONS.payments.sofort.path, alt: "Discover" },
+];
+
+export const paymentIconsDataForCheckout = [
+  { path: ICONS.payments.visa.path, alt: "Visa" },
+  { path: ICONS.payments.mastercard.path, alt: "Mastercard" },
+  { path: ICONS.payments.paypal.path, alt: "PayPal" },
+];
+
+export const markdownContent = `
+## **Product Description**
+
+**Format**: 1 sachet with 2 soaked bandages
+
+The kit contains 1 "open and close" bag containing 2 bandages already soaked and ready to use, washable and reusable up to 8 times each.
+
+### **Therapeutic indications**
+This product is designed for professional-level drainage therapy. It targets areas prone to fluid retention and aids in reducing swelling and promoting circulation, helping to firm and tone the skin.
+
+### **Dosage**
+Recommended use is 1-2 times per week, depending on individual needs and tolerance. Adjust frequency as suggested by a dermatologist or as indicated on the packaging.
+
+### **How to Use**
+Apply the wrap on clean, dry skin, focusing on areas needing drainage (e.g., thighs or abdomen). Leave the wrap on as directed, usually for 30-60 minutes, to maximize osmotic effect and enhance skin toning.
+
+### **Overdose**
+Excessive use may lead to skin dryness or irritation due to the saline concentration. Always follow recommended usage and discontinue if any adverse reactions occur.
+
+### **Contraindications**
+Not suitable for individuals with extremely sensitive skin, open wounds, or those with an allergy to any ingredients. Always consult a healthcare provider if you have any concerns before use.
+
+### **Side Effects**
+Some users may experience mild skin irritation, tingling, or redness due to the active ingredients. These effects are generally temporary, but discontinue if persistent discomfort occurs.
+
+### **Special Warnings**
+Pregnant or breastfeeding individuals should consult a physician before use. Avoid using on irritated skin, and discontinue if a rash or allergic reaction develops.
+
+### **Expiry & Storage**
+Store the product in a cool, dry place, away from direct sunlight and high temperatures. Observe the expiration date to ensure optimal effectiveness and safety.
+
+### **Composition**
+Contains a blend of active salts, including magnesium sulfate, which provides an intensive osmotic action to help drain excess fluids and stimulate microcirculation for enhanced skin tone.
+`;

@@ -1,16 +1,18 @@
 import React from "react";
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import style from "./style.module.css";
 
-export function Tab({ tabs = [], defaultValue, Icon, order, className = "", children }) {
+export function Tab({
+  tabs = [],
+  defaultValue,
+  Icon,
+  order,
+  className = "",
+  children,
+}) {
   return (
     <Tabs defaultValue={defaultValue || tabs[0]?.value} className={className}>
-      <div className="px-[10px] h-[92px] py-[20px] rounded-[12px] flex w-full items-center justify-between flex-row bg-white [box-shadow:0px_4px_4px_0px_#00000026]">
+      <div className="px-[10px] h-[92px] py-[20px] rounded-[12px] overflow-x-auto flex w-full items-center justify-between flex-row bg-white [box-shadow:0px_4px_4px_0px_#00000026]">
         <TabsList
           className={`flex gap-[60px] ${
             order === "order" ? style.order : style.default

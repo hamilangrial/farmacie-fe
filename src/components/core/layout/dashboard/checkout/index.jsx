@@ -29,6 +29,8 @@ import "react-phone-input-2/lib/style.css";
 import Select from "react-select";
 import { countries } from "countries-list";
 import { shippingSchema } from "@/lib/schema";
+import { paymentIconsDataForCheckout } from "@/_lib/dumyData";
+import PaymentIcons from "@/components/ui/paymenticons";
 
 // Convert countries list to options format for react-select
 const countryOptions = Object.entries(countries).map(([code, country]) => ({
@@ -792,48 +794,7 @@ const OrderSummary = () => {
             <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
               Accepted Secure Payment Methods
             </p>
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="Visa"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="American Express"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="Mastercard"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="PayPal"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="h-[20px] sm:h-[25px] w-[32px] sm:w-[40px] relative">
-                <Image
-                  src={IMAGES.visa.path}
-                  alt="Discover"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            <PaymentIcons icons={paymentIconsDataForCheckout} />
           </div>
         </div>
       </div>

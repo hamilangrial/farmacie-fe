@@ -8,13 +8,24 @@ const statusColorMap = {
   Cancelled: "bg-[#FF0000]",
 };
 
-const OrderCard = ({ orderId, date, time, imageUrl, status, price,onclick }) => {
+const OrderCard = ({
+  orderId,
+  date,
+  time,
+  imageUrl,
+  status,
+  price,
+  onclick,
+}) => {
   return (
-    <div onClick={onclick} className="cursor-pointer w-full flex items-center justify-between p-[24px] bg-white rounded-lg shadow mb-4">
+    <div
+      onClick={onclick}
+      className="cursor-pointer w-full flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:items-center justify-between p-[24px] bg-white rounded-lg shadow mb-4"
+    >
       <div className="w-[60px] h-[60px] rounded overflow-hidden">
         <Image src={imageUrl} alt="Product" width={108} height={108} />
       </div>
-      <div className="flex flex-col ml-4 flex-1">
+      <div className="flex flex-col md:ml-4 flex-1">
         <p className="font-medium text-2xl text-[#1E1E1E]">
           Order ID: #{orderId}
         </p>
@@ -22,13 +33,13 @@ const OrderCard = ({ orderId, date, time, imageUrl, status, price,onclick }) => 
           {date} &nbsp; {time}
         </p>
       </div>
-      <div className="flex flex-col items-end gap-[12px]">
+      <div className="flex flex-col-reverse md:flex-col items-start md:items-end gap-[12px]">
         <div
           className={`w-[144px] rounded-[50px] flex items-center justify-center p-[5px] text-center  ${
             statusColorMap[status] || "bg-gray-400"
           }`}
         >
-          <h3 className=" text-white text-center text-base font-medium">
+          <h3 className="text-white text-center text-base font-medium">
             {status}
           </h3>
         </div>

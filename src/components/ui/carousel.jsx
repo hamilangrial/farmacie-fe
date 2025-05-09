@@ -222,10 +222,29 @@ function CarouselNext({
   );
 }
 
+function CarouselDot({ className, ...props }) {
+  const { orientation } = useCarousel();
+
+  return (
+    <div
+      role="button"
+      aria-roledescription="dot"
+      data-slot="carousel-dot"
+      className={cn(
+        "absolute size-2 rounded-full",
+        orientation === "horizontal" ? "bottom-2" : "right-2",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
 export {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDot,
 };
