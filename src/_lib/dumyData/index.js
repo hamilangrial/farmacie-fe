@@ -1,3 +1,4 @@
+import { ICONS } from "../constant/assets/icons";
 import { IMAGES } from "../constant/assets/images";
 
 export const Essential_Over = [
@@ -516,4 +517,18 @@ export const ExclucsiveDeals = [
       alt: IMAGES.saleproduct.alt,
     },
   },
+];
+
+export const paymentIconsData = [
+  { path: ICONS.payments.visa.path, alt: "Visa" },
+  { path: ICONS.payments.amex.path, alt: "American Express" },
+  { path: ICONS.payments.mastercard.path, alt: "Mastercard" },
+  { path: ICONS.payments.paypal.path, alt: "PayPal" },
+  { path: ICONS.payments.sofort.path, alt: "Discover" },
+];
+
+export const paymentIconsDataForCheckout = [
+  { path: ICONS.payments.visa.path, alt: "Visa" },
+  { path: ICONS.payments.mastercard.path, alt: "Mastercard" },
+  { path: ICONS.payments.paypal.path, alt: "PayPal" },
 ];
