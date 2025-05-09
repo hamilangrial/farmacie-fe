@@ -18,7 +18,7 @@ const ProductImageGallery = ({ images = [] }) => {
           <button
             key={index}
             onClick={() => setSelectedImage(img)}
-            className={`h-16 w-16 md:h-24 md:w-24 md:h-[145px] md:w-[145px] rounded-lg overflow-hidden ${
+            className={`h-16 w-16 md:h-24 md:w-24 md:h-[100px] md:w-[145px] rounded-lg overflow-hidden ${
               selectedImage?.image === img.image
                 ? style.selectedImg
                 : "border-transparent"
@@ -28,7 +28,7 @@ const ProductImageGallery = ({ images = [] }) => {
               src={img.image}
               alt={`Thumbnail ${index}`}
               width={145}
-              height={145}
+              height={100}
               className="object-cover"
             />
           </button>
