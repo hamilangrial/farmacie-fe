@@ -50,3 +50,27 @@ export const changePasswordSchema = yup.object({
     .required("Please confirm your password")
     .oneOf([yup.ref("newPassword")], "Passwords must match"),
 });
+
+export const loginSchema = yup.object().shape({
+  email: yup.string().email("Invalid email").required("Email is required"),
+  password: yup.string().required("Password is required"),
+});
+
+export const signupSchema = yup.object().shape({
+  firstname: yup.string().required("First name is required"),
+  lastname: yup.string().required("Last name is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  contact: yup
+    .string()
+    .matches(/^[0-9]{10,15}$/, "Contact number is not valid")
+    .required("Contact number is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  confirmpassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required("Confirm password is required"),
+  // terms: yup.bool().oneOf([true], "You must accept the terms"),
+});

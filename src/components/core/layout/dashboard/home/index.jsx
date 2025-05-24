@@ -21,7 +21,9 @@ const DashBoard = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <Carousel />
-      <CategoryBadges />
+      <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+        <CategoryBadges />
+      </div>
       <div className="flex flex-col gap-6 p-4 sm:p-6">
         <SectionHeader
           className="gap-[24px]"
