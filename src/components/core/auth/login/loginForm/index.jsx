@@ -1,19 +1,37 @@
 "use client";
 import React from "react";
-import LoginBanner from "../../../../ui/banner";
+import LoginBanner from "@/components/ui/banner";
 import { Button, Checkbox, Input } from "@/components/ui";
 import Image from "next/image";
 import { ICONS } from "@/_lib/constant/assets/icons";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Controller, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema } from "@/lib/schema";
 
 export default function LoginForm() {
   const router = useRouter();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    router.push("/home");
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(loginSchema),
+    mode: "all",
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
   };
+
+  console.log("errors=========", errors);
+
   return (
     <>
       <div className="grid grid-cols gap-[40px]">
@@ -30,38 +48,57 @@ export default function LoginForm() {
           </p>
         </div>
         <div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid gap-10">
-              <Input
-                label="Email address"
-                id="email"
-                placeholder="Enter your email address here"
-                type="email"
-                required
-                icon={
-                  <Image
-                    src={ICONS.email.path}
-                    alt={ICONS.email.alt}
-                    width={19}
-                    height={15}
+              {/* Email Field */}
+              <Controller
+                name="email"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <Input
+                    {...field}
+                    label="Email address"
+                    id="email"
+                    placeholder="Enter your email address here"
+                    type="email"
+                    icon={
+                      <Image
+                        src={ICONS.email.path}
+                        alt={ICONS.email.alt}
+                        width={19}
+                        height={15}
+                      />
+                    }
+                    error={errors.email?.message}
                   />
-                }
+                )}
               />
-              <div className="grid gap-[15px]">
-                <Input
-                  label="Password"
-                  id="password"
-                  placeholder="Enter your Password here"
-                  required
-                  type="password"
-                  icon={
-                    <Image
-                      src={ICONS.password.path}
-                      alt={ICONS.password.alt}
-                      width={15}
-                      height={17}
+
+              <div className="grid gap-10">
+                {/* Password Field */}
+                <Controller
+                  name="password"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      label="Password"
+                      id="password"
+                      placeholder="Enter your Password here"
+                      type="password"
+                      icon={
+                        <Image
+                          src={ICONS.password.path}
+                          alt={ICONS.password.alt}
+                          width={15}
+                          height={17}
+                        />
+                      }
+                      error={errors.password?.message}
                     />
-                  }
+                  )}
                 />
 
                 <div className="flex items-center justify-between text-sm">
@@ -76,10 +113,10 @@ export default function LoginForm() {
               </div>
               <div className="w-full flex items-center justify-center">
                 <Button
+                  type="submit"
                   variant="secondary"
                   size="sm"
                   className="md:min-w-[416px] max-w-full text-lg"
-                  onClick={handleLogin}
                 >
                   LogIn
                 </Button>
@@ -99,9 +136,10 @@ export default function LoginForm() {
               <div className="w-full flex items-center justify-center">
                 <Button
                   variant="default"
+                  type="button"
                   size="sm"
                   className="lg:min-w-[340px] text-sm md:text-base whitespace-normal"
-                  onClick={handleLogin}
+                  onClick={() => router.push("/home")}
                 >
                   Continue as a Guest Account
                 </Button>

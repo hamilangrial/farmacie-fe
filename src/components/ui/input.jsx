@@ -9,6 +9,7 @@ function Input({
   placeholder,
   required,
   className,
+  error,
   ...props
 }) {
   return (
@@ -47,10 +48,10 @@ function Input({
             "py-2 font-normal text-base border-none",
             className
           )}
-          
           {...props}
         />
       </div>
+      {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
   );
 }
